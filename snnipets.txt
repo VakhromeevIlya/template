@@ -112,6 +112,22 @@
 		],
 		"description": "Cursor-pointer"
 	},
+	"Pointer-Event none": {
+		"scope": "scss",
+		"prefix": "pen",
+		"body": [
+			"pointer-events: none;"
+		],
+		"description": "pointer-events"
+	},
+	"Pointer-Event auto": {
+		"scope": "scss",
+		"prefix": "pea",
+		"body": [
+			"pointer-events: auto;"
+		],
+		"description": "pointer-events"
+	},
 	"Height": {
 		"scope": "scss",
 		"prefix": "h",
@@ -132,7 +148,15 @@
 		"scope": "scss",
 		"prefix": "av",
 		"body": [
-			"@include adaptiveValue(\"${1:font-size}\", $2, $3);"
+			"@include adaptiveValue(\"$1\", $2, $3,\\$containerWidth, \\$minWidth, 1);"
+		],
+		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
+	},
+	"Adaptive Value Fonts Size": {
+		"scope": "scss",
+		"prefix": "avfz",
+		"body": [
+			"@include adaptiveValue(\"font-size\", $1, $2,\\$containerWidth, \\$minWidth, 1);"
 		],
 		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
 	},
@@ -378,7 +402,7 @@
 		"scope": "scss",
 		"prefix": "mbl",
 		"body": [
-			"&:not(:last-child) {margin-bottom: $1px;}"
+			"&:not(:last-child) {margin-bottom: em($1,$2);}"
 		],
 		"description": "Добавляет нижний отступ исключая последний объект"
 	},
@@ -729,6 +753,14 @@
 			"border-radius: 50%;"
 		],
 		"description": "br5"
+	},
+	"brr": {
+		"scope": "css,scss",
+		"prefix": "brr",
+		"body": [
+			"border-radius: rem($0);"
+		],
+		"description": "brr"
 	},
 	"bs": {
 		"prefix": "bs",
