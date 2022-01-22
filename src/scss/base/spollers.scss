@@ -4,7 +4,7 @@
 // Блок со спойлерами
 .spollers {
 	display: grid;
-	gap: 15px;
+	gap: rem(15);
 }
 // Спойлер
 .spollers__item {
@@ -18,7 +18,7 @@
 	width: 100%;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
+	border: rem(1) solid #eee;
 	padding: rem(10) rem(15);
 	border-radius: rem(5);
 	position: relative;
@@ -28,11 +28,11 @@
 		&::after {
 			content: "";
 			position: absolute;
-			right: 10px;
+			right: rem(10);
 			top: 50%;
 			background-color: #000;
-			height: 2px;
-			width: 15px;
+			height: rem(2);
+			width: rem(15);
 			transition: transform 0.5s ease 0s;
 		}
 		&::before {
@@ -55,5 +55,5 @@
 .spollers__body {
 	padding: rem(20);
 	border-radius: rem(5);
-	border: 1px solid #eee;
+	border: rem(1) solid #eee;
 }

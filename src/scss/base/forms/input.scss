@@ -15,7 +15,7 @@ textarea {
 	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
+	padding: 0 rem(20);
 	&._focus {
 	}
 	&._error {
@@ -23,5 +23,5 @@ textarea {
 }
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
+	padding: 0;
 }

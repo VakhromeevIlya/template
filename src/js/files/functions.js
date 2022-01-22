@@ -199,7 +199,7 @@ export function spollers() {
 			});
 			// Получаем уникальные брейкпоинты
 			let mediaQueries = breakpointsArray.map(function (item) {
-				return '(' + item.type + "-width: " + item.value + "px)," + item.value + ',' + item.type;
+				return '(' + item.type + "-width: " + item.value + "em)," + item.value + ',' + item.type;
 			});
 			mediaQueries = mediaQueries.filter(function (item, index, self) {
 				return self.indexOf(item) === index;
@@ -334,7 +334,7 @@ export function tabs() {
 
 		// Получаем уникальные брейкпоинты
 		let mediaQueries = breakpointsArray.map(function (item) {
-			return `(max-width:${item.value}px),${item.value}`;
+			return `(max-width:${item.value}em),${item.value}`;
 		});
 		mediaQueries = mediaQueries.filter(function (item, index, self) {
 			return self.indexOf(item) === index;

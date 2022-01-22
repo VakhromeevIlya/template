@@ -24,7 +24,7 @@ DynamicAdapt.prototype.init = function () {
 		оbject.element = node;
 		оbject.parent = node.parentNode;
 		оbject.destination = document.querySelector(dataArray[0].trim());
-		оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
+		оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "48";
 		оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
 		оbject.index = this.indexInParent(оbject.parent, оbject.element);
 		this.оbjects.push(оbject);
@@ -32,7 +32,7 @@ DynamicAdapt.prototype.init = function () {
 	this.arraySort(this.оbjects);
 	// массив уникальных медиа-запросов
 	this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
-		return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
+		return '(' + this.type + "-width: " + item.breakpoint + "em)," + item.breakpoint;
 	}, this);
 	this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
 		return Array.prototype.indexOf.call(self, item) === index;

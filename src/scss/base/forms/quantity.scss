@@ -1,13 +1,13 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-	width: 88px;
-	height: 40px;
+	width: rem(88);
+	height: rem(40);
 	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
+	border: rem(1) solid rgba(166, 166, 166, 0.45);
 	// .quantity__button
 	&__button {
-		flex: 0 0 30px;
+		flex: 0 0 rem(30);
 		position: relative;
 		cursor: pointer;
 		&::before,
@@ -17,10 +17,10 @@
 			top: 50%;
 			left: 50%;
 			transition: all 0.3s ease 0s;
-			margin: 0px 0px 0px -4.5px;
+			margin: 0 0 0 rem(-4.5);
 			background-color: #a6a6a6;
-			width: 9px;
-			height: 1px;
+			width: rem(9);
+			height: rem(1);
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -46,7 +46,7 @@
 		input {
 			height: 100%;
 			color: #a6a6a6;
-			font-size: 12px;
+			font-size: rem(12);
 			width: 100%;
 			text-align: center;
 		}
