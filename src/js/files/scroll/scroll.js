@@ -1,5 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, getHash } from "../functions.js";
+import { isMobile, getHash,setHash } from "../functions.js";
 // Импорт класса наблюдателя.
 import { ScrollWatcher } from "../../libs/watcher.js";
 // Модуль прокрутки к блоку
@@ -30,6 +30,7 @@ export function pageNavigation() {
 				const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
 				const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : '500';
 				gotoBlock(gotoLinkSelector, noHeader, gotoSpeed);
+				setHash(hash);
 				e.preventDefault();
 			}
 		} else if (e.type === "watcherCallback") {

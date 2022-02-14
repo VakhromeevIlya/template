@@ -1,9 +1,17 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
-// import { isMobile } from "./functions.js";
+ import { getHash } from "./functions.js";
 // import { formsModules } from "./forms/forms.js";
 let block = document.querySelector('.menu__item');
 document.addEventListener('click', documentActions);
-
+if (getHash()) {
+	const nav = getHash();
+	const link = document.querySelector(`a[href="${nav}"]`);
+	if (link) {
+		window.addEventListener('load', function () {
+			link.click();
+		});
+	}
+}
 function _removeClasses(el, class_name) {
 	for (var i = 0; i < el.length; i++) {
 		el[i].classList.remove(class_name);
