@@ -6,11 +6,10 @@ import { gotoBlock } from "../scroll/gotoblock.js";
 // Класс select
 import { SelectConstructor } from "../../libs/select.js";
 // Класс масок
-import { InputMask } from "../../libs/inputmask.js";
+//import "../../libs/inputmask.js";
 //==============================================================================================================================================================================================================================================================================================================================
 // Объект модулей форм для экспорта
 export const formsModules = {
-	inputMaskModule: null,
 	selectModule: null
 }
 //================================================================================================================================================================================================================================================================================================================================
@@ -222,11 +221,11 @@ export function formSubmit(validate) {
 	}
 }
 /* Маски для полей (в работе) */
-export function formMasks(logging) {
-	formsModules.inputMaskModule = new InputMask({
-		logging: logging
-	});
-}
+//export function formMasks(logging) {
+//	formsModules.inputMaskModule = new InputMask({
+//		logging: logging
+//	});
+//}
 /* Модуль работы с select */
 export function formSelect() {
 	formsModules.selectModule = new SelectConstructor({});

@@ -84,6 +84,22 @@
 		],
 		"description": "Добавляет объект с картинкой и классом IBG"
 	},
+	"Add picture Swiper": {
+		"scope": "html",
+		"prefix": "pics",
+		"body": [
+			"<picture>\n\t<source class=\"swiper-lazy\" data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"swiper-lazy\" data-src=\"@img$1\" alt=\"Картинка\">\n</picture>"
+		],
+		"description": "swiper lazy"
+	},
+	"Add picture Lazy": {
+		"scope": "html",
+		"prefix": "picl",
+		"body": [
+			"<picture>\n\t<source data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"_lazy\" data-src=\"@img$1\" alt=\"Картинка\">\n</picture>"
+		],
+		"description": "swiper lazy"
+	},
 	"Add Link with image IBG": {
 		"scope": "html",
 		"prefix": "ibga",
@@ -765,7 +781,7 @@
 	"bs": {
 		"prefix": "bs",
 		"body": [
-			"box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"
+			"box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.3);"
 		],
 		"description": "bs"
 	},
@@ -973,6 +989,14 @@
 		],
 		"description": "ac_css"
 	},
+	"menuopen_css": {
+		"scope": "scss,css",
+		"prefix": "mo",
+		"body": [
+			".menu-open &{\n\t$0\n}"
+		],
+		"description": "mo_css"
+	},
 	"ac_html": {
 		"scope": "html,kit,javascript",
 		"prefix": "ac",
@@ -1075,7 +1099,7 @@
 	"aic": {
 		"prefix": "aic",
 		"body": [
-			"align-items:${1:center};"
+			"align-items:center;"
 		],
 		"description": "aic"
 	},
@@ -1229,7 +1253,7 @@
 	},
 	"logo": {
 		"prefix": "logo",
-		"body": "<a href=\"\" class=\"header__logo\"><img src=\"../img/logo.svg\" alt=\"\"></a>",
+		"body": "<a href=\"\" class=\"header__logo\"><img src=\"@img/logo.svg\" alt=\"Логотип\"></a>",
 		"description": "logo"
 	},
 	"Image": {

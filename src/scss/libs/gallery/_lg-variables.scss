@@ -1,9 +1,5 @@
 $backdrop-opacity: 1 !default;
-$lg-toolbar-bg: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.4)
-) !default;
+$lg-toolbar-bg: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)) !default;
 $lg-border-radius-base: 2px !default;
 $lg-theme-highlight: rgb(169, 7, 7) !default;
 $lg-theme-color: #000 !default;
@@ -15,7 +11,7 @@ $lg-icon-hover-color: #fff !default;
 
 // counter
 $lg-counter-color: #e6e6e6 !default;
-$lg-counter-font-size: 16px !default;
+$lg-counter-font-size: rem(16) !default;
 
 // Next prev icons
 $lg-next-prev-bg: $lg-icon-bg !default;
@@ -30,28 +26,24 @@ $lg-toolbar-icon-disabled-opacity: 0.75 !default;
 // autoplay progress bar
 $lg-progress-bar-bg: #333 !default;
 $lg-progress-bar-active-bg: $lg-theme-highlight !default;
-$lg-progress-bar-height: 5px !default;
+$lg-progress-bar-height: rem(5) !default;
 
 // paths
-$lg-path-fonts: '../fonts' !default;
-$lg-path-images: '../images' !default;
+$lg-path-fonts: "../fonts" !default;
+$lg-path-images: "../images" !default;
 
 // Zoom plugin
 $zoom-transition-duration: 0.5s !default;
 
 // Sub html - titile
-$lg-sub-html-bg: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.6)
-) !default;
+$lg-sub-html-bg: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)) !default;
 $lg-sub-html-color: #eee !default;
 
 // thumbnail toggle button
 $lg-thumb-toggle-bg: #0d0a0a !default;
 $lg-thumb-toggle-color: $lg-icon-color !default;
 $lg-thumb-bg: #0d0a0a !default;
-$lg-thumb-container-height: 100px;
+$lg-thumb-container-height: rem(100);
 
 // Pager
 

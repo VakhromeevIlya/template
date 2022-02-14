@@ -31,9 +31,11 @@ import { otfToTtf, ttfToWoff, fonstStyle } from "./config/gulp-tasks/fonts.js";
 
 // Последовательная обработака шрифтов
 const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);
+//Создание webp изображений
 const webp = gulp.series(reset, images, otfToTtf, ttfToWoff, fonstStyle);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
-const devTasks = gulp.parallel(fonts, gitignore);
+const devTasks = gulp.series(fonts,gitignore,images);
+//gulp.parallel(fonts, gitignore);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
 const buildTasks = gulp.series(fonts, js, gulp.parallel(html, css, images, gitignore), jsp);
 
@@ -43,10 +45,10 @@ export { css }
 export { js }
 export { images }
 export { fonts }
-export { webp }
 export { sprite }
 export { ftp }
 export { zip }
+export { webp }
 
 // Построение сценариев выполнения задач
 const development = gulp.series(devTasks);
