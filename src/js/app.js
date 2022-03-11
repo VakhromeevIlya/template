@@ -142,7 +142,7 @@ import * as flsForms from "./files/forms/forms.js";
 Документация плагина: https://github.com/verlok/vanilla-lazyload
 Сниппет(HTML):
 */
-// import './files/scroll/lazyload.js';
+ import './files/scroll/lazyload.js';
 
 // Функции работы скроллом ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 import * as flsScroll from "./files/scroll/scroll.js";
