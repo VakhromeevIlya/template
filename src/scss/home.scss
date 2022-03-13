@@ -9,218 +9,73 @@
 }
 //====================================================================================================
 .card-preview-slider {
-	display: block;
-	width: 300px;
-	height: 200px;
-	overflow: hidden;
-	margin: 0 auto;
-	position: relative;
-	background-color: whitesmoke;
-	@media (any-hover: hover) {
-		&:hover {
-			ul {
-				opacity: 1;
-			}
-		}
+	.swiper {
+		width: 300px;
+		position: relative;
+		height: 200px;
 	}
-	.slider__item {
-		
-	}
-	img {
-		
-		top: 0;
-		left: 0;
-		width: 100%;
-		display: none;
-		height: 100%;
-		background: whitesmoke;
-		cursor: pointer;
-		@media (any-hover: hover){
+	.swiper-slide {
+		display: block;
+		@media (any-hover: hover) {
 			position: absolute;
-			
-		}
-		&._active {
-			//animation: opacity 0.5s ease-in-out forwards;
-			display: block;
-		}
-
-		&:not(._active),
-		&._active ~ img:nth-of-type(1) {
-			position: relative;
+			top: 0;
+			left: 0;
 			opacity: 0;
-			@media (any-hover: none){
-				opacity: 1;
-				display: block;
-			}
-		}
-
-		&:nth-of-type(1) {
-			//position: absolute;
-			display: block;
-			opacity: 1;
-		}
-	}
-	ul {
-		position: absolute;
-		bottom: 0px;
-		list-style: none;
-		left: 50%;
-		height: 100%;
-		transform: translateX(-50%);
-		width: 100%;
-		padding-left: 0;
-		justify-content: center;
-		align-items: center;
-		@media (any-hover: hover) {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-			opacity: 0;
-		}
-		@media (any-hover: none) {
-			display: flex;
-			height: 10px;
-			display: none;
-			pointer-events: none;
-		}
-		li {
-			display: flex;
-			align-items: flex-end;
+			width: 100%;
 			height: 100%;
-			cursor: pointer;
-
-			@media (any-hover: hover) {
-				width: 100%;
-				&:hover {
-					span {
-						background: red;
-					}
-				}
-			}
-			@media (any-hover: none) {
-				pointer-events: none;
-				padding: 5px;
-				&:nth-last-of-type(1) {
-					span {
-						&._active {
-							background: red;
-						}
-					}
-				}
-			}
-
-			span {
-				height: 5px;
-				width: 100%;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				font-family: monospace;
-				font-size: 1.5em;
-				background: grey;
-				text-align: center;
-				text-decoration: none;
+			transition: opacity 0.1s ease-in-out;
+			&._active {
+				opacity: 1;
 			}
 		}
 	}
-	&__dots {
-		@media (any-hover: hover) {
-			display: none;
-		}
-		display: flex;
-		justify-content: center;
-		position: absolute;
-		align-items: center;
-		height: 10px;
-		width: 100%;
-		bottom: 10px;
-		left: 0;
-		span {
-			width: 5px;
-			height: 5px;
+	.swiper-pagination {
+		.swiper-pagination-bullet {
 			background: red;
-			border: 1px solid red;
-			border-radius: 50%;
-			display: inline-flex;
-			&:not(:last-child) {
-				margin-right: 5px;
+		}
+	}
+	&__list {
+		@media (any-hover: hover) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			z-index: 1;
+			pointer-events: none;
+			opacity: 0;
+			grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+			&:hover {
+				opacity: 1;
 			}
-			&._active {
-				width: 10px;
-				height: 10px;
-				background: transparent;
-				border: 1px solid red;
+		}
+	}
+
+	&__item {
+		height: 100%;
+		position: relative;
+		pointer-events: auto;
+		cursor: pointer;
+		&._active {
+			&::before {
+				background: red;
 			}
+		}
+		&:not(:last-child) {
+			&::before {
+				border-right: 1px solid #000;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			height: 5px;
+			background: grey;
+			pointer-events: none;
 		}
 	}
 }
-
-//.slider {
-//	width: 800px;
-//	height: 500px;
-//	border-radius: 10px;
-//	overflow: hidden;
-//	display: block;
-//}
-
-//.imgs_slides {
-//	width: 500%;
-//	height: 500px;
-//	display: flex;
-//}
-
-//.imgs_slides input {
-//	display: none;
-//}
-
-//.slide {
-//	width: 20%;
-//	transition: 2s;
-//}
-
-//.slide img {
-//	width: 800px;
-//	height: 500px;
-//}
-
-//.navigation {
-//	position: absolute;
-//	width: 800px;
-//	margin-top: -40px;
-//	display: flex;
-//	justify-content: center;
-//}
-
-//.navigation-btn {
-//	width: 20%;
-//	height: rem(5);
-//	border: 2px solid #de6a23;
-//	padding: 5px;
-//	border-radius: 2px;
-//	cursor: pointer;
-//	transition: 1s;
-//}
-
-//.navigation-btn:not(:last-child) {
-//	margin-right: 10px;
-//}
-
-//.navigation-btn:hover {
-//	background: #de6a23;
-//}
-
-//[id^="radio1"]:checked ~ .first {
-//	margin-left: 0;
-//}
-//[id^="radio2"]:checked ~ .first {
-//	margin-left: -20%;
-//}
-//[id^="radio3"]:checked ~ .first {
-//	margin-left: -40%;
-//}
-//[id^="radio4"]:checked ~ .first {
-//	margin-left: -60%;
-//}
-//[id^="radio5"]:checked ~ .first {
-//	margin-left: -80%;
-//}
