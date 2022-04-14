@@ -14,3 +14,19 @@
 		display: block;
 	}
 }
+._icon-comment:before {
+	content: "\e900";
+ }
+ ._icon-user:before {
+	content: "\e901";
+ }
+ ._icon-file:before {
+	content: "\e909";
+ }
+ ._icon-like:before {
+	content: "\e90c";
+ }
+ ._icon-star:before {
+	content: "\e91a";
+	color: #c6c6c6;
+ }

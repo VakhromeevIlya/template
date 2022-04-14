@@ -8,7 +8,207 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
+			<div class="product-reviews">
+				<div class="product-reviews__container">
+					<div class="product-reviews__grid">
+						<div class="product-reviews__top product-reviews-top">
+							<div class="product-reviews-top__title">Отзывы</div>
+							<div class="product-reviews-top__body">
+								<button type="button" id="back-to-reviews" class="product-reviews-top__back">назад к
+									оценкам</button>
+								<div class="product-reviews-top__rating">
+									<div class="rating">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items">
+												<input type="radio" class="rating__item" value="1" name="rating">
+												<input type="radio" class="rating__item" value="2" name="rating">
+												<input type="radio" class="rating__item" value="3" name="rating">
+												<input type="radio" class="rating__item" value="4" name="rating">
+												<input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4</div>
+									</div>
+									<div class="product-reviews-top__quantity"><span>164</span> оценки</div>
+								</div>
+								<div class="product-reviews-top__button">
+									<button type="button" id="reviews-set-item">Оставить отзыв</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-reviews__bottom product-reviews-bottom">
+							<div class="product-reviews-bottom__front product-reviews-bottom-front">
+								<ul class="product-reviews-bottom-front__list">
+									<li class="product-reviews-bottom-front__item">
+										<div class="product-reviews-bottom-front__general">
+											<div class="product-reviews-bottom-front__name">Анастасия</div>
+											<div class="product-reviews-bottom-front__date">27.02.2022 в 12:34 </div>
+											<div class="product-reviews-bottom-front__rating">
+												<div class="rating">
+													<div class="rating__body">
+														<div class="rating__active"></div>
+														<div class="rating__items">
+															<input type="radio" class="rating__item" value="1" name="rating">
+															<input type="radio" class="rating__item" value="2" name="rating">
+															<input type="radio" class="rating__item" value="3" name="rating">
+															<input type="radio" class="rating__item" value="4" name="rating">
+															<input type="radio" class="rating__item" value="5" name="rating">
+														</div>
+													</div>
+													<div class="rating__value">4</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-reviews-bottom-front__comment">
+											<div class="product-reviews-bottom-front__subtitle">Комментарий:</div>
+											<div class="product-reviews-bottom-front__comment-body">Замечательный костюм, не
+												угадала с размером по сетке вышло 48, я ношу 46. Возврат, буду перезаказывать 46
+											</div>
+										</div>
+										<div class="product-reviews-bottom-front__image">
+											<img src="@img/reviews_product.jpg" alt="">
+										</div>
+										<div class="product-reviews-bottom-front__like-or-dislike">
+											<button type="button"
+												class="product-reviews-bottom-front__like _icon-like">312</button>
+											<button type="button"
+												class="product-reviews-bottom-front__dislike _icon-like">60</button>
+										</div>
+										<ul class="product-reviews-bottom-front__responses">
+											<li>
+												<div class="product-reviews-bottom-front__comment">
+													<div class="product-reviews-bottom-front__subtitle">Ответ администрации</div>
+													<div class="product-reviews-bottom-front__comment-body">
+														Добрый день, спасибо за отзыв! При выборе размера рекомендуем Вам
+														ориентироваться на рост модели - 172см, размер на модели 42, параметры модели
+														83 60 90. Так же, рекомендуем использовать таблицу соответствия размеров и
+														параметров фигуры, указанную в карточке товара.
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="product-reviews-bottom-front__comment">
+													<div class="product-reviews-bottom-front__subtitle">Ответ администрации</div>
+													<div class="product-reviews-bottom-front__comment-body">
+														Добрый день, спасибо за отзыв! При выборе размера рекомендуем Вам
+														ориентироваться на рост модели - 172см, размер на модели 42, параметры модели
+														83 60 90. Так же, рекомендуем использовать таблицу соответствия размеров и
+														параметров фигуры, указанную в карточке товара.
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="product-reviews-bottom-front__item">
+										<div class="product-reviews-bottom-front__general">
+											<div class="product-reviews-bottom-front__name">Анастасия</div>
+											<div class="product-reviews-bottom-front__date">27.02.2022 в 12:34 </div>
+											<div class="product-reviews-bottom-front__rating">
+												<div class="rating">
+													<div class="rating__body">
+														<div class="rating__active"></div>
+														<div class="rating__items">
+															<input type="radio" class="rating__item" value="1" name="rating">
+															<input type="radio" class="rating__item" value="2" name="rating">
+															<input type="radio" class="rating__item" value="3" name="rating">
+															<input type="radio" class="rating__item" value="4" name="rating">
+															<input type="radio" class="rating__item" value="5" name="rating">
+														</div>
+													</div>
+													<div class="rating__value">4</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-reviews-bottom-front__comment">
+											<div class="product-reviews-bottom-front__subtitle">Комментарий:</div>
+											<div class="product-reviews-bottom-front__comment-body">Замечательный костюм, не
+												угадала с размером по сетке вышло 48, я ношу 46. Возврат, буду перезаказывать 46
+											</div>
+										</div>
+										<div class="product-reviews-bottom-front__image">
+											<img src="@img/puzzle-2.jpg" alt="">
+										</div>
+										<div class="product-reviews-bottom-front__like-or-dislike">
+											<button type="button"
+												class="product-reviews-bottom-front__like _icon-like">312</button>
+											<button type="button"
+												class="product-reviews-bottom-front__dislike _icon-like">60</button>
+										</div>
+										<ul class="product-reviews-bottom-front__responses">
+											<li>
+												<div class="product-reviews-bottom-front__comment">
+													<div class="product-reviews-bottom-front__subtitle">Ответ администрации</div>
+													<div class="product-reviews-bottom-front__comment-body">
+														Добрый день, спасибо за отзыв! При выборе размера рекомендуем Вам
+														ориентироваться на рост модели - 172см, размер на модели 42, параметры модели
+														83 60 90. Так же, рекомендуем использовать таблицу соответствия размеров и
+														параметров фигуры, указанную в карточке товара.
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="product-reviews-bottom-front__comment">
+													<div class="product-reviews-bottom-front__subtitle">Ответ администрации</div>
+													<div class="product-reviews-bottom-front__comment-body">
+														Добрый день, спасибо за отзыв! При выборе размера рекомендуем Вам
+														ориентироваться на рост модели - 172см, размер на модели 42, параметры модели
+														83 60 90. Так же, рекомендуем использовать таблицу соответствия размеров и
+														параметров фигуры, указанную в карточке товара.
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="product-reviews-bottom__back">
+								<form action="#" class="product-reviews-bottom-form">
+									<div class="product-reviews-bottom-form__line">
+										<div class="product-reviews-bottom-form__name _icon-user">
+											<input autocomplete="off" type="text" placeholder="Ваше имя" class="input">
+										</div>
+									</div>
+									<div class="product-reviews-bottom-form__line">
+										<div class="product-reviews-bottom-form__subtitle">Ваша оценка:</div>
+										<div class="product-reviews-bottom-form__rating">
+											<div class="rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value"></div>
+											</div>
+										</div>
+									</div>
+									<div class="product-reviews-bottom-form__line">
+										<div class="product-reviews-bottom-form__textarea _icon-comment">
+											<textarea placeholder="Комментарий"></textarea>
+										</div>
 
+									</div>
+									<div class="product-reviews-bottom-form__line">
+										<label class="product-reviews-bottom-form__file _icon-file">
+											Прикрепить изображения (не более 20 мб и/или 5 шт)
+											<input type="file">
+										</label>
+									</div>
+									<div class="product-reviews-bottom-form__line">
+										<button type="submit" class="product-reviews-bottom-form__submit">Опубликовать
+											отзыв</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

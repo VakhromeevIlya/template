@@ -19,8 +19,11 @@
 	position: relative;
 }
 .rating__body::before {
-	content: "★★★★★";
+	@extend %ic;
+	content: "\e91a\e91a\e91a\e91a\e91a";
 	display: block;
+	color: #c6c6c6;
+	font-size: 15px;
 }
 .rating__active {
 	position: absolute;
@@ -31,13 +34,15 @@
 	overflow: hidden;
 }
 .rating__active::before {
-	content: "★★★★★";
+	@extend %ic;
+	content: "\e91a\e91a\e91a\e91a\e91a";
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	color: #ffd300;
+	font-size: 15px;
 }
 
 .rating__items {
@@ -57,4 +62,5 @@
 	font-size: 50%;
 	line-height: 1;
 	padding: 0 0 0 rem(10);
+	display: none;
 }
