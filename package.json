@@ -70,6 +70,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"lottie-web": "^5.9.4",
 		"simplebar": "latest"
 	}
 }

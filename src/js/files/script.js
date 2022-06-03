@@ -1,5 +1,6 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
  import { getHash } from "./functions.js";
+ import Lottie from "lottie-web";
 // import { formsModules } from "./forms/forms.js";
 let block = document.querySelector('.menu__item');
 document.addEventListener('click', documentActions);
@@ -43,3 +44,10 @@ function documentActions(e) {
 	}
 
 }
+Lottie.loadAnimation({
+	container: document.querySelector('#lottie'),
+	renderer: 'canvas',
+	loop: true,
+	autoplay: true,
+	path: './files/logo-animation.json'
+});
