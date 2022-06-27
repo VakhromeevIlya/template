@@ -1,5 +1,42 @@
 //====================================================================================================
-
+.header {
+	&__wrapper {
+	}
+	&._no-transform {
+		.header__wrapper {
+			animation: none !important;
+			transform: none !important;
+		}
+	}
+	&._header-scroll {
+		.header__wrapper {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 100;
+		}
+	}
+	&._header-animate {
+		.header__wrapper {
+			animation: slideInDown 0.8s linear forwards;
+		}
+	}
+	&._header-animated {
+		.header__wrapper {
+			transform: none;
+		}
+	}
+}
+.menu-mobile-up,
+.menu-mobile-down {
+	display: none;
+	opacity: 0;
+	.menu-open & {
+		display: block;
+		animation: opacity 0.5s linear forwards;
+	}
+}
 //====================================================================================================
 
 //Burger

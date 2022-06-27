@@ -36,7 +36,6 @@ export function pageNavigation() {
 					? gotoLink.dataset.gotoSpeed
 					: "500";
 				gotoBlock(gotoLinkSelector, noHeader, gotoSpeed);
-				setHash(hash);
 				e.preventDefault();
 			}
 		} else if (e.type === "watcherCallback") {
@@ -98,11 +97,6 @@ export function headerScroll() {
 				setTimeout(function () {
 					header.classList.remove("_header-animate");
 					header.classList.add("_header-animated");
-					if (!header.querySelector(".header__wrapper").dataset.lp) {
-						header
-							.querySelector(".header__wrapper")
-							.setAttribute("data-lp", "1");
-					}
 				}, headerAnimate);
 			}
 			if (headerShow) {
@@ -127,9 +121,6 @@ export function headerScroll() {
 			header.classList.contains("_header-scroll")
 				? header.classList.remove("_header-scroll")
 				: null;
-			if (header.querySelector(".header__wrapper").getAttribute("data-lp")) {
-				header.querySelector(".header__wrapper").removeAttribute("data-lp");
-			}
 			if (header.classList.contains("_header-animated")) {
 				header.classList.remove("_header-animated");
 			}

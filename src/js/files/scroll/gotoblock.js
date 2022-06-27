@@ -1,5 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, menuClose, getHash, FLS } from "../functions.js";
+import { isMobile, menuClose, getHash,scrollBurgerMenu, FLS } from "../functions.js";
 // Подключение дополнения для увеличения возможностей
 // Документация: https://github.com/cferdinandi/smooth-scroll
 // import SmoothScroll from 'smooth-scroll';
@@ -8,6 +8,8 @@ import { isMobile, menuClose, getHash, FLS } from "../functions.js";
 // Модуль плавной проктутки к блоку
 export let gotoBlock = (targetBlock, noHeader = false, speed = 500, offset = 0) => {
 	const targetBlockElement = document.querySelector(targetBlock);
+	const html = document.documentElement;
+	const header = document.querySelector("header.header");
 	if (targetBlockElement) {
 		let headerItem = '';
 		let headerItemHeight = 0;
@@ -23,7 +25,17 @@ export let gotoBlock = (targetBlock, noHeader = false, speed = 500, offset = 0) 
 			easing: 'easeOutQuad',
 		};
 		// Закрываем меню, если оно открыто
-		document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+		// Закрываем меню, если оно открыто
+		if (html.classList.contains("menu-open")) {
+			menuClose();
+			window.scrollTo(0, scrollBurgerMenu);
+			if (scrollBurgerMenu > header.dataset.scroll) {
+				header.classList.add("_no-transform");
+				setTimeout(function () {
+					header.classList.remove("_no-transform");
+				}, 1000);
+			}
+		}
 
 		if (typeof SmoothScroll !== 'undefined') {
 			// Прокрутка с использованием дополнения

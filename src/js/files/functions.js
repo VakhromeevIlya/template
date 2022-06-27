@@ -456,23 +456,34 @@ export function tabs() {
 	}
 }
 // Модуь работы с меню (бургер) =======================================================================================================================================================================================================================
+export let scrollBurgerMenu;
 export function menuInit() {
 	let iconMenu = document.querySelector(".icon-menu");
+	const header = document.querySelector("header.header");
 	if (iconMenu) {
 		iconMenu.addEventListener("click", function (e) {
+			const html = document.documentElement;
 			if (bodyLockStatus) {
-				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
+				if (html.classList.contains("menu-open")) {
+					menuClose();
+					window.scrollTo(0, scrollBurgerMenu);
+					header.classList.add("_no-transform");
+					setTimeout(function () {
+						header.classList.remove("_no-transform");
+					}, 2000);
+				} else if (!html.classList.contains("menu-open")) {
+					scrollBurgerMenu = document.documentElement.scrollTop;
+					menuOpen();
+					window.scrollTo(0, 0);
+				}
 			}
 		});
-	};
+	}
 }
 export function menuOpen() {
-	bodyLock();
 	document.documentElement.classList.add("menu-open");
 }
 export function menuClose() {
-	bodyUnlock();
 	document.documentElement.classList.remove("menu-open");
 }
 // Модуль "показать еще" =======================================================================================================================================================================================================================
