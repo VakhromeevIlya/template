@@ -42,14 +42,22 @@
 		"scope": "html",
 		"prefix": "swiper",
 		"body": [
-			"<div class=\"${1:имя блока}__slider\">\n\t<div class=\"${1:имя блока}__swiper\">\n\t\t<div class=\"${1:имя блока}__slide\"></div>\n\t</div>\n</div>"
+			"<div class=\"${1:имя блока}__slider swiper\">\n\t<div class=\"${1:имя блока}__swiper swiper-wrapper\">\n\t\t<div class=\"${1:имя блока}__slide swiper-slide\"></div>\n\t</div>\n</div>"
 		],
 		"description": "Добавляет базовый HTML код слайдера Swiper"
+	},
+	"Swiper Lazy Prelaoder": {
+		"scope": "html",
+		"prefix": "slp",
+		"body": [
+			"<div class=\"swiper-lazy-preloader\"></div>"
+		],
+		"description": "Добавляет прелоадер для свайпера"
 	},
 	"Quantity": {
 		"scope": "html",
 		"prefix": "quantity",
-		"body": "<div class=\"quantity\">\n\t<button type=\"button\" class=\"quantity__button quantity__button_plus\"></button>\n\t<div class=\"quantity__input\">\n\t\t<input autocomplete=\"off\" type=\"text\" name=\"form[]\" value=\"1\">\n\t</div>\n\t<button type=\"button\" class=\"quantity__button quantity__button_minus\"></button>\n</div>",
+		"body": "<div class=\"quantity\">\n\t<button type=\"button\" class=\"quantity__button quantity__button_minus\"></button>\n\t<div class=\"quantity__input\">\n\t\t<input autocomplete=\"off\" type=\"text\" name=\"form[]\" value=\"1\">\n\t</div>\n\t<button type=\"button\" class=\"quantity__button quantity__button_plus\"></button>\n</div>",
 		"description": "Добавняет HTML формы с кол-вом"
 	},
 	"Add tooltip": {
@@ -88,7 +96,7 @@
 		"scope": "html",
 		"prefix": "pics",
 		"body": [
-			"<picture>\n\t<source class=\"swiper-lazy\" data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"swiper-lazy\" data-src=\"@img$1\" alt=\"Картинка\">\n</picture>"
+			"<picture>\n\t<source class=\"swiper-lazy\" data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"swiper-lazy\" data-src=\"@img$1\" alt=\"\">\n</picture>"
 		],
 		"description": "swiper lazy"
 	},
@@ -96,7 +104,7 @@
 		"scope": "html",
 		"prefix": "picl",
 		"body": [
-			"<picture>\n\t<source data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"_lazy\" data-src=\"@img$1\" alt=\"Картинка\">\n</picture>"
+			"<picture>\n\t<source data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"_lazy\" data-src=\"@img$1\" alt=\"\">\n</picture>"
 		],
 		"description": "swiper lazy"
 	},
@@ -127,6 +135,22 @@
 			"cursor: pointer;"
 		],
 		"description": "Cursor-pointer"
+	},
+	"Word Break": {
+		"scope": "scss",
+		"prefix": "wb",
+		"body": [
+			"word-break: break-all;"
+		],
+		"description": "word-break"
+	},
+	"Word Break Break Word": {
+		"scope": "scss",
+		"prefix": "wbw",
+		"body": [
+			"word-break: break-word;"
+		],
+		"description": "word-break"
 	},
 	"Pointer-Event none": {
 		"scope": "scss",
@@ -264,11 +288,27 @@
 		],
 		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
 	},
+	"Adaptive Value Padding-top-variable": {
+		"scope": "scss",
+		"prefix": "avptv",
+		"body": [
+			"@include adaptiveValue(\"padding-top\", $1, $2, \\$containerWidth, \\$minWidth, 4,--start-pt,--end-pt,--middle-pt);"
+		],
+		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
+	},
 	"Adaptive Value Padding-bottom": {
 		"scope": "scss",
 		"prefix": "avpb",
 		"body": [
 			"@include adaptiveValue(\"padding-bottom\", $1, $2, \\$containerWidth, \\$minWidth, 1);"
+		],
+		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
+	},
+	"Adaptive Value Padding-bottom-variable": {
+		"scope": "scss",
+		"prefix": "avpbv",
+		"body": [
+			"@include adaptiveValue(\"padding-bottom\", $1, $2, \\$containerWidth, \\$minWidth, 4,--start-pb,--end-pb,--middle-pb);"
 		],
 		"description": "Адаптивное свойство: CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
 	},
@@ -422,6 +462,14 @@
 		],
 		"description": "Добавляет нижний отступ исключая последний объект"
 	},
+	"Margin Bottom not last-child Adaptive Value": {
+		"scope": "scss",
+		"prefix": "mblav",
+		"body": [
+			"&:not(:last-child) {\n\t@include adaptiveValue(\"margin-bottom\", , , \\$containerWidth, \\$minWidth, 1);\n}"
+		],
+		"description": "Добавляет нижний отступ исключая последний объект вместе с адаптивным свойством"
+	},
 	"Margin Bottom not last-child with EM": {
 		"scope": "scss",
 		"prefix": "mble",
@@ -447,7 +495,7 @@
 	"Line height": {
 		"scope": "scss",
 		"prefix": "lh",
-		"body": "line-height: math.div($1 , $2);",
+		"body": "line-height: math.div($1,$2);",
 		"description": "Добавляет относительный line-height"
 	},
 	"Color inherit": {
@@ -483,6 +531,14 @@
 			"data-popup=\"$1\""
 		],
 		"description": "Добавляет трибут для открытия попапа"
+	},
+	"JS anonymous function": {
+		"scope": "javascript,typescript",
+		"prefix": "af",
+		"body": [
+			"(function () {\n\t\n}());"
+		],
+		"description": "document.querySelectorAll"
 	},
 	"JS Click": {
 		"scope": "javascript,typescript",
@@ -946,6 +1002,13 @@
 		],
 		"description": "after"
 	},
+	"BeforeFullWidthBg": {
+		"prefix": "bfw",
+		"body": [
+			"&::before{\n\tcontent:'';\n\tposition: absolute;\n\theight: 100%;\n\twidth: 100vw;\n\tz-index: -1;\n\ttop: 0;\n\tleft: 50%;\n\tbackground: white;\n\ttransform: translateX(-50%);\n}"
+		],
+		"description": "after"
+	},
 	"Before": {
 		"prefix": "b",
 		"body": [
@@ -973,6 +1036,27 @@
 			"@media (any-hover: none){\n\t$0\n}"
 		],
 		"description": "ahn"
+	},
+	"htmlhn": {
+		"prefix": "htmlhn",
+		"body": [
+			".touch & {\n\t$0\n}"
+		],
+		"description": "htmlhn"
+	},
+	"htmlhh": {
+		"prefix": "htmlhh",
+		"body": [
+			"html:not(.touch) & {\n\t$0\n}"
+		],
+		"description": "htmlhh"
+	},
+	"load": {
+		"prefix": "load",
+		"body": [
+			".loaded & {\n\t$0\n}"
+		],
+		"description": "load"
 	},
 	"acc": {
 		"prefix": "acc",
@@ -1223,7 +1307,7 @@
 	},
 	"CheckBox": {
 		"prefix": "chk",
-		"body": "<div class=\"checkbox\">\n\t<input id=\"c_1\" data-error=\"Ошибка\" class=\"checkbox__input\" type=\"checkbox\" value=\"1\" name=\"form[]\">\n\t<label for=\"c_1\" class=\"checkbox__label\"><span class=\"checkbox__text\">${1:Текст}</span></label>\n</div>",
+		"body": "<label>\n\t<input data-error=\"Ошибка\" class=\"checkbox__input\" type=\"checkbox\" value=\"1\" name=\"form[]\">\n\t<div class=\"checkbox__label\"></div>\n\t<span class=\"checkbox__text\">Текст</span>\n</label>",
 		"description": ""
 	},
 	"Button": {
@@ -1251,6 +1335,11 @@
 		"body": "<div class=\"header__menu menu\">\n\t<button type=\"button\" class=\"menu__icon icon-menu\"><span></span></button>\n\t<nav class=\"menu__body\">\n\t\t<ul class=\"menu__list\">\n\t\t\t<li class=\"menu__item\"><a href=\"\" class=\"menu__link\"></a></li>\n\t\t</ul>\n\t</nav>\n</div>",
 		"description": "menu"
 	},
+	"menu-wp": {
+		"prefix": "menuwp",
+		"body": "<div class=\"header__menu menu\">\n\t<button type=\"button\" class=\"menu__icon icon-menu\"><span></span></button>\n\t<nav class=\"menu__body\">\n\t\t<ul class=\"menu__list\">\n\t\t\t<li class=\"menu-item\">\n\t\t\t\t<a href=\"\"></a>\n\t\t\t\t<ul class=\"sub-menu\">\n\t\t\t\t\t<li><a href=\"\"></a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"menu-item\"><a href=\"\"></a></li>\n\t\t</ul>\n\t</nav>\n</div>",
+		"description": "menu"
+	},
 	"logo": {
 		"prefix": "logo",
 		"body": "<a href=\"\" class=\"header__logo\"><img src=\"@img/logo.svg\" alt=\"Логотип\"></a>",
@@ -1272,6 +1361,16 @@
 		"prefix": "sp",
 		"body": "//========================================================================================================================================================\n$1",
 		"description": "sp"
+	},
+	"spt": {
+		"prefix": "spt",
+		"body": "//TODO========================================================================================================================================================\n$1",
+		"description": "spt"
+	},
+	"sp?": {
+		"prefix": "sp?",
+		"body": "//?========================================================================================================================================================\n$1",
+		"description": "sp?"
 	},
 	"nowrap": {
 		"prefix": "wsnw",
