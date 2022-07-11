@@ -34,6 +34,8 @@ flsFunctions.isWebp();
 // flsFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
 // flsFunctions.addLoadedClass();
+/* Добавление safari класса для HTML */
+// flsFunctions.safari();
 /* Модуль для работы с меню (Бургер) */
 //flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
